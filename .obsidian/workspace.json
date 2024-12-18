@@ -1,0 +1,172 @@
+{
+  "main": {
+    "id": "c3501d7e2b3d8bec",
+    "type": "split",
+    "children": [
+      {
+        "id": "5c9d9c840ab92e4c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3ee5aada599ea5b0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Database Articoli.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Database Articoli"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "459fc9d1831c1308",
+    "type": "split",
+    "children": [
+      {
+        "id": "d24ff02d97637516",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "87129e7b98b661d4",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Esplora risorse"
+            }
+          },
+          {
+            "id": "2994a91605b38d95",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Ricerca"
+            }
+          },
+          {
+            "id": "fb6212cacd5c5480",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Segnalibri"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "a8778dc0c1cf497a",
+    "type": "split",
+    "children": [
+      {
+        "id": "0c2c18d5f44f3fec",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "be53073d72bdb536",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Database Articoli Query.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Riferimenti a Database Articoli Query"
+            }
+          },
+          {
+            "id": "ab256f86cfe18fcc",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Database Articoli Query.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Collegamenti in uscita da Database Articoli Query"
+            }
+          },
+          {
+            "id": "70651889835009c7",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Etichette"
+            }
+          },
+          {
+            "id": "a2e1b93706001548",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Database Articoli Query.md"
+              },
+              "icon": "lucide-list",
+              "title": "Struttura di Database Articoli Query"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Apri selezione rapida": false,
+      "graph:Apri vista grafo": false,
+      "canvas:Crea nuova lavagna": false,
+      "daily-notes:Apri nota del giorno": false,
+      "templates:Inserisci modello": false,
+      "command-palette:Apri riquadro comandi": false
+    }
+  },
+  "active": "3ee5aada599ea5b0",
+  "lastOpenFiles": [
+    "Database Articoli.md",
+    "Senza nome",
+    "Database Articoli Query.md",
+    "Database Articoli Query.md"
+  ]
+}
