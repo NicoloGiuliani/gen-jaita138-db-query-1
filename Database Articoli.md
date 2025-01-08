@@ -30,8 +30,8 @@ limit 5
 -- 6. Recupera gli articoli che appartengono alla categoria 'Tecnologia'.
 select a.*
 from articoli a
-join articoli_categorie ac ON a.id_articolo = ac.id_articolo
-join categorie c ON ac.id_categoria = c.id_categoria
+join articoli_categorie ac on a.id_articolo = ac.id_articolo
+join categorie c on ac.id_categoria = c.id_categoria
 where c.nome_categoria like 'Tecnologia'
 
 -- 7. Recupera le email degli utenti che hanno scritto almeno un articolo.
