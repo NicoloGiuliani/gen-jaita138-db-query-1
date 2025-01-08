@@ -33,10 +33,12 @@ from articoli a
 join articoli_categorie ac ON a.id_articolo = ac.id_articolo
 join categorie c ON ac.id_categoria = c.id_categoria
 where c.nome_categoria like 'Tecnologia'
+
 -- 7. Recupera le email degli utenti che hanno scritto almeno un articolo.
 select distinct u. email
 from utenti u
 join articoli a on u.id_utente = a.id_utente
+
 -- 8. Recupera tutti gli articoli pubblicati tra il 1° giugno 2024 e il 31 agosto 2024.
 select *
 from articoli a 
@@ -52,4 +54,42 @@ where ac.id_articolo = 10
 select u.nome, u.data_iscrizione 
 from utenti u 
 order by u.data_iscrizione desc
+```
+
+### Livello 2: Interrogazioni intermedie
+```sql
+-- 1. Conta il numero di articoli scritti da ogni utente.
+select u.*, count(a.id_articolo) as 'numero_articoli'
+from utenti u
+join articoli a on u.id_utente = a.id_utente
+group by u.id_utente
+
+-- 2. Trova la categoria con il maggior numero di articoli associati.
+select c.*, count(ac.id_articolo) as n_articoli
+from categorie c
+join articoli_categorie ac on c.id_categoria = ac.id_categoria
+group by c.id_categoria
+order by n_articoli desc
+limit 1
+
+-- 3. Recupera gli utenti che hanno scritto più di 2 articoli.
+select u.*, count(a.id_articolo) as n_articoli
+from utenti u
+join articoli a on u.id_utente = a.id_utente
+group by a.id_utente
+having n_articoli > 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```
