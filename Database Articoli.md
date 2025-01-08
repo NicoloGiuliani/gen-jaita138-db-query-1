@@ -79,11 +79,28 @@ join articoli a on u.id_utente = a.id_utente
 group by a.id_utente
 having n_articoli > 2
 
+-- 4. Calcola la data di pubblicazione più recente per ogni categoria.
+select ac.id_categoria, max(a.data_pubblicazione)
+from articoli_categorie ac
+join articoli a on ac.id_articolo = a.id_articolo
+group by ac.id_categoria
 
+-- 5. Trova il numero medio di articoli per utente.
 
+-- 6. Recupera le categorie che hanno almeno 3 articoli associati.
+select c.*, count(ac.id_articolo) as n_articoli
+from categorie c
+join articoli_categorie ac on c.id_categoria = ac.id_categoria
+group by c.id_categoria
+having n_articoli >= 3
+order by n_articoli desc
 
-
-
+-- 7. Calcola il totale degli articoli pubblicati per ogni mese del 2024.
+select month(a.data_pubblicazione) as mese_di_pubblicazione, count(ac.id_articolo) as n_articoli
+from articoli a
+join articoli_categorie ac on a.id_articolo = ac.id_articolo
+group by mese_di_pubblicazione
+order by mese_di_pubblicazione
 
 
 
