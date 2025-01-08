@@ -1,5 +1,4 @@
 ### Livello 1: Interrogazioni di Base
-
 ```sql
 -- 1. Recupera tutti gli utenti registrati nel sistema.
 select *
@@ -102,11 +101,22 @@ join articoli_categorie ac on a.id_articolo = ac.id_articolo
 group by mese_di_pubblicazione
 order by mese_di_pubblicazione
 
+-- 8. Trova l'utente che ha la data di iscrizione più antica.
+select u.*
+from utenti u
+order by u.data_iscrizione
+limit 1
 
+-- 9. Recupera le categorie e il numero di articoli associati a ciascuna, ordinati dal più al meno.
+select c.*, count(ac.id_articolo) as n_articoli
+from categorie c
+join articoli_categorie ac on c.id_categoria = ac.id_categoria
+group by c.id_categoria
+order by n_articoli desc
 
-
-
-
-
-
+-- 10. Calcola il numero totale di articoli pubblicati da utenti iscritti nel 2024.
+select count(a.id_articolo) as numero_articoli_pubblicati
+from utenti u
+join articoli a on u.id_utente = a.id_utente
+where year(u.data_iscrizione) = 2024;
 ```
