@@ -44,9 +44,9 @@ from articoli a
 where data_pubblicazione between '2024-06-01' and '2024-08-31'
 
 -- 9. Recupera i dettagli delle categorie associate all'articolo con `id_articolo` = 10.
-select *
+select c.*
 from articoli_categorie ac 
-join articoli a on ac.id_articolo = a.id_articolo
+join categorie c on ac.id_articolo = c.id_articolo
 where ac.id_articolo = 10 
 
 -- 10. Recupera i nomi degli utenti ordinati per data di iscrizione più recente.
@@ -64,7 +64,7 @@ join articoli a on u.id_utente = a.id_utente
 group by u.id_utente
 
 -- 2. Trova la categoria con il maggior numero di articoli associati.
-select c.*, count(ac.id_articolo) as n_articoli
+select c.id_categoria, count(ac.id_articolo) as n_articoli
 from categorie c
 join articoli_categorie ac on c.id_categoria = ac.id_categoria
 group by c.id_categoria
@@ -119,4 +119,37 @@ select count(a.id_articolo) as numero_articoli_pubblicati
 from utenti u
 join articoli a on u.id_utente = a.id_utente
 where year(u.data_iscrizione) = 2024;
+```
+
+### Livello 3: Interrogazioni bonus
+```sql
+-- 1. Recupera gli utenti che non hanno scritto nessun articolo.
+select u.*
+from utenti u 
+left join articoli a on u.id_utente = a.id_utente
+where a.id_articolo is null
+
+-- 2. Trova le categorie che non hanno alcun articolo associato.
+select c.*
+from categorie c 
+left join articoli_categorie ac on c.id_categoria = ac.id_categoria 
+where ac.id_articolo is null 
+
+-- 3. Trova le categorie che contengono articoli scritti da utenti iscritti prima del 2024.
+select distinct c.*
+from utenti u 
+join articoli a on u.id_utente = a.id_utente 
+join articoli_categorie ac on a.id_articolo = ac.id_articolo 
+join categorie c on ac.id_categoria = c.id_categoria 
+where u.data_iscrizione < '2024-01-01'
+order by c.id_categoria 
+
+-- 4. Recupera le categorie che sono associate ad almeno 3 articoli pubblicati nel 2024.
+select c.*, count(*) as n_articoli
+from categorie c
+join articoli_categorie ac on c.id_categoria = ac.id_categoria
+join articoli a on ac.id_articolo = a.id_articolo
+where year(a.data_pubblicazione)= 2024
+group by c.id_categoria
+having n_articoli>=3
 ```
